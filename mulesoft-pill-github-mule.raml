@@ -1,0 +1,51 @@
+#%RAML 1.0
+title: mulesoft-pill-github-mule.raml
+version: v1
+
+
+/helloworld:
+  is: [client-id-required, error-response]
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: | 
+              {
+                "title": "Hello world Response",
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "description": {
+                        "type": "string"
+                      },
+                      "href": {
+                        "type": "string"
+                      }
+
+                    }
+                  }
+                }
+              }
+            example: 
+              {
+                "status": "200",
+                "message": "HELLO WORLD",
+                "href": "",
+                "data": {
+                  "description": "Hello World Message",
+                  "href": ""
+
+                }
+              }
